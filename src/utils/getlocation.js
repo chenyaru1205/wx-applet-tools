@@ -1,17 +1,15 @@
-/** @format */
-
-import { getLocation, getStorageSync, setStorage } from '@remax/wechat'
+import { getLocation, getStorageSync, setStorage } from "@remax/wechat";
 
 export const getNowLocation = async () => {
   let location = getStorageSync('location')
-  if (!location || location === '') {
-    location = await getLocation()
-    try {
+  if(!location || location === "") {
+    location = await getLocation();
+    try{
       setStorage({
         key: 'location',
         data: location,
       })
-    } catch (e) {
+    } catch(e) {
       console.log('err', err)
     }
   }
@@ -19,7 +17,7 @@ export const getNowLocation = async () => {
 }
 
 export const initLocation = async () => {
-  const location = await getLocation()
+  let location = await getLocation();
   setStorage({
     key: 'location',
     data: location,

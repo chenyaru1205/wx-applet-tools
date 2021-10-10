@@ -8,7 +8,7 @@ import location from './location'
 const models = {
   mainList,
   counter,
-  location,
+  location
 }
 export default init({
   models: {

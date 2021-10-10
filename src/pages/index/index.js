@@ -82,7 +82,7 @@ const mapState = ({ mainList }) => ({
 })
 const mapDispatch = ({ mainList: { updateCount, updateCountAsyn } }) => ({
   updateCount,
-  updateCountAsyn,
+  updateCountAsyn
 })
 export default connect(mapState, mapDispatch, null, {
   forwardRef: true,
