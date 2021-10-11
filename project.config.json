@@ -39,6 +39,6 @@
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
   "appid": "wx12da2865fe01b8b2",
-  "projectname": "my-app",
+  "projectname": "wx-applet-tools",
   "condition": {}
 }

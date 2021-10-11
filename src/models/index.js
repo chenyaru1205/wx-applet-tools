@@ -3,12 +3,12 @@
 import { init } from '@rematch/core'
 import mainList from './mainList'
 import counter from './counter'
-import location from './location'
+import weather from './weather'
 
 const models = {
   mainList,
   counter,
-  location
+  weather,
 }
 export default init({
   models: {

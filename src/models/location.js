@@ -1,5 +1,5 @@
 /** @format */
-import { getLocation } from "@remax/wechat";
+import { getLocation } from '@remax/wechat'
 
 const initialLocation = {
   latitude: 0, //	number	纬度，范围为 -90~90，负数表示南纬
@@ -14,28 +14,28 @@ const initialLocation = {
 export default {
   state: {
     cachedLocation: null,
-    isGet: false
+    isGet: false,
   },
   reducers: {
     updateLocation: (state, payload) => ({
       ...state,
-      ...payload
-    })
+      ...payload,
+    }),
   },
   effects: dispatch => ({
     async getLocation({}, rootState) {
       console.log(111, rootState)
       const {
-        location: {isGet, cachedLocation}
+        location: { isGet, cachedLocation },
       } = rootState
       let location = initialLocation
-      if(isGet) {
+      if (isGet) {
         location = cachedLocation
       } else {
         location = await getLocation()
-        dispatch.location.updateLocation({cachedLocation: location, isGet: true})
+        dispatch.location.updateLocation({ cachedLocation: location, isGet: true })
       }
       return location
-    }
-  })
+    },
+  }),
 }
