@@ -1,9 +1,9 @@
 /** @format */
 
 module.exports = {
-  pages: ['pages/weather/index', 'pages/index/index', 'pages/study/index', 'pages/counter/index'],
+  pages: ['pages/weather/index', 'pages/counter/index'],
   window: {
-    navigationBarTitleText: 'React微信小程序',
+    navigationBarTitleText: '百宝箱',
     navigationBarTextStyle: 'black',
     navigationBarBackgroundColor: '#ffffff',
     backgroundColor: '#eeeeee',
@@ -18,14 +18,6 @@ module.exports = {
       {
         pagePath: 'pages/weather/index',
         text: '天气',
-      },
-      {
-        pagePath: 'pages/index/index',
-        text: '首页',
-      },
-      {
-        pagePath: 'pages/study/index',
-        text: '学习',
       },
       {
         pagePath: 'pages/counter/index',

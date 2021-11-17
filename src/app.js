@@ -3,6 +3,7 @@
 import './app.css'
 import * as React from 'react'
 // import { useAppEvent } from 'remax/macro'
+import { setEnableDebug } from 'remax/wechat'
 import T from 'prop-types'
 import { Provider } from 'react-redux'
 import models from './models'
@@ -15,6 +16,9 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    setEnableDebug({
+      enableDebug: true
+    })
     // no-console
     console.log('App launch')
   }
