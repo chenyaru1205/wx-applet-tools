@@ -41,6 +41,7 @@ class counterPage extends Component {
       <View className={styles.content}>
         {arr.map((row, i) => {
           return (
+            // eslint-disable-next-line react/no-array-index-key
             <View className={styles.row} key={`${i}row`}>
               {row.map((cloumn, j) => {
                 return (

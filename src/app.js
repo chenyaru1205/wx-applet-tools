@@ -17,7 +17,7 @@ class App extends React.Component {
 
   componentDidMount() {
     setEnableDebug({
-      enableDebug: true
+      enableDebug: true,
     })
     // no-console
     console.log('App launch')

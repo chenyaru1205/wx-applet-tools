@@ -5,11 +5,9 @@ const outputRpn = exp => {
   const inputStack = []
   const outputStack = []
   const outputQueue = []
-  let firstIsOperator = false
   exp.replace(/\s/g, '')
-  if (isOperator(exp[0])) {
-    exp = exp.substring(1)
-    firstIsOperator = true
+  if (isOperator(exp[0]) && !isBrackets(exp[0])) {
+    exp = '0' + exp
   }
   for (let i = 0, max = exp.length; i < max; i++) {
     if (!isOperator(exp[i]) && !isOperator(exp[i - 1]) && i !== 0) {
@@ -17,9 +15,6 @@ const outputRpn = exp => {
     } else {
       inputStack.push(exp[i])
     }
-  }
-  if (firstIsOperator) {
-    inputStack[0] = -inputStack[0]
   }
   while (inputStack.length > 0) {
     const cur = inputStack.shift()
@@ -48,6 +43,11 @@ const outputRpn = exp => {
     }
   }
   return outputQueue
+}
+
+const isBrackets = values => {
+  const bracketsString = '()'
+  return bracketsString.includes(values)
 }
 
 const isOperator = values => {
